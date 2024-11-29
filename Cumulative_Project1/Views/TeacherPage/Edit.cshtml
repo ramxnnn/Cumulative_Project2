@@ -1,0 +1,40 @@
+﻿@model Cumulative_Project1.Models.Teacher
+
+<div class="container mt-5">
+    <h2 class="mb-4">Edit Teacher</h2>
+
+    <nav class="mb-3">
+        <a class="btn btn-primary" href="/TeacherPage/List">Back</a>
+    </nav>
+
+    <form method="POST" action="/TeacherPage/Update/@Model.TeacherId">
+        <div class="form-group mb-3">
+            <label for="TeacherFirstName" class="form-label">First Name:</label>
+            <input type="text" id="TeacherFirstName" name="TeacherFirstName" class="form-control" value="@Model.TeacherFirstName" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="TeacherLastName" class="form-label">Last Name:</label>
+            <input type="text" id="TeacherLastName" name="TeacherLastName" class="form-control" value="@Model.TeacherLastName" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="EmployeeNumber" class="form-label">Employee Number:</label>
+            <input type="text" id="EmployeeNumber" name="EmployeeNumber" class="form-control" value="@Model.EmployeeNumber" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="HireDate" class="form-label">Hire Date:</label>
+            <input type="date" id="HireDate" name="HireDate" class="form-control" value="@Model.HireDate.ToString("yyyy-MM-dd")" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="Salary" class="form-label">Salary:</label>
+            <input type="text" id="Salary" name="Salary" class="form-control" value="@Model.Salary" />
+        </div>
+
+        <div class="form-group mb-3">
+            <input type="submit" value="Update Teacher" class="btn btn-success" />
+        </div>
+    </form>
+</div>

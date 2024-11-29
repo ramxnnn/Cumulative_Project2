@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Cumulative_Project1.Models.Teacher>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Teacher Management</h2>
+
+    <!-- Add Teacher Button -->
+    <a href="/TeacherPage/New" class="btn btn-primary mb-4">Add Teacher</a>
+
+    <!-- Search Form -->
+    <form method="GET" action="/TeacherPage/List" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="SearchKey" class="form-control" placeholder="Search by name..." />
+            <div class="input-group-append">
+                <input type="submit" value="Search" class="btn btn-outline-secondary" />
+            </div>
+        </div>
+    </form>
+
+    <!-- Teacher List -->
+    <div class="list-group">
+        @foreach (Cumulative_Project1.Models.Teacher teacher in Model)
+        {
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <!-- Teacher Name -->
+                <a href="/TeacherPage/Show/@teacher.TeacherId" class="list-group-item-action">
+                    @teacher.TeacherFirstName @teacher.TeacherLastName
+                </a>
+                <!-- Show Button -->
+                <a href="/TeacherPage/Show/@teacher.TeacherId" class="btn btn-info btn-sm">
+                    Show
+                </a>
+            </div>
+        }
+    </div>
+</div>
